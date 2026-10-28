@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caddy on Railway</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #0b1020; color: #e8eefc;
+    }
+    main {
+      max-width: 36rem; padding: 2rem; border: 1px solid #243056;
+      border-radius: 1rem; background: #121933; box-shadow: 0 20px 60px #0008;
+    }
+    h1 { margin: 0 0 .5rem; font-size: 1.6rem; }
+    p { margin: .5rem 0; line-height: 1.5; color: #b7c3e0; }
+    code { background: #0b1020; padding: .15rem .4rem; border-radius: .35rem; color: #9ad1ff; }
+    a { color: #8ab4ff; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Caddy is running</h1>
+    <p>Official <strong>Caddy 2.11.7</strong> (Alpine) on Railway. HTTPS is terminated at Railway’s edge; this container speaks plain HTTP on <code>$PORT</code>.</p>
+    <p>Replace files under <code>/srv</code> (or the repo <code>www/</code> folder) to serve your site, or set <code>UPSTREAM=host:port</code> to reverse-proxy another Railway service over the private network.</p>
+    <p><a href="https://caddyserver.com/docs/">Caddy docs</a> · <a href="https://docs.railway.com/guides/caddy">Railway Caddy guide</a></p>
+  </main>
+</body>
+</html>

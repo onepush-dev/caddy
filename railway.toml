@@ -1,0 +1,10 @@
+# Caddy 2.11.7 (Alpine) static file server / optional reverse proxy on Railway.
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Welcome page (or upstream) answers 200 as soon as Caddy binds $PORT.
+healthcheckPath = "/"
+healthcheckTimeout = 60
+restartPolicyType = "ALWAYS"

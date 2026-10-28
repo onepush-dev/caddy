@@ -1,0 +1,19 @@
+# Caddy on Railway — static file server (default).
+# Railway terminates TLS at the edge; do NOT enable auto_https here.
+{
+	admin off
+	persist_config off
+	auto_https off
+	servers {
+		# Trust Railway's private proxy ranges for real client IPs
+		trusted_proxies static private_ranges
+	}
+}
+
+# {$PORT} is injected by Railway (falls back to 8080 via entrypoint if unset).
+:{$PORT} {
+	encode gzip zstd
+	root * /srv
+	file_server
+	try_files {path} /index.html
+}
